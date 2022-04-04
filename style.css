@@ -1,0 +1,232 @@
+.card__back::-webkit-scrollbar {
+  width: 10px;
+}
+
+.card__back::-webkit-scrollbar-track {
+  background: var(--color-primary);
+  border-radius: 10px;
+}
+
+.card__back::-webkit-scrollbar-thumb {
+  background: rgb(249, 184, 65);
+  border-radius: 10px;
+}
+
+.card__back::-webkit-scrollbar-thumb:hover {
+  background: rgb(207, 178, 63);
+  border-radius: 10px;
+}
+
+.card__back::-webkit-scrollbar-thumb:active {
+  background: rgb(214, 157, 11);
+  border-radius: 10px;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto Mono", monospace;
+  background-color: rgba(211, 207, 207, 0.59);
+  z-index: -1;
+}
+
+:root {
+  --color-primary: orange;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+.bg-img {
+  background-image: url(./img/bg-img.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  height: 80vh;
+  position: relative;
+  z-index: -2;
+  clip-path: polygon(0 0, 100% 0, 100% 92%, 0% 100%);
+}
+
+.bg-img::after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.385);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  clip-path: polygon(0 0, 100% 0, 100% 92%, 0% 100%);
+}
+
+.header__heading {
+  color: white;
+  letter-spacing: 2px;
+  line-height: 1.4;
+  font-size: 32px;
+  text-align: center;
+  margin: 0 auto;
+  text-transform: uppercase;
+  grid-column: 3/5;
+  grid-row: 4/7;
+}
+
+.header__subheading {
+  font-size: 18px;
+  color: var(--color-primary);
+  grid-column: 3/5;
+  grid-row: 6/7;
+  text-align: center;
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+.form {
+  z-index: 10;
+  grid-column: 1/12;
+  width: 100%;
+  height: 100%;
+  grid-row: 8/9;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.search {
+  width: 400px;
+  height: 40px;
+  border-radius: 30px;
+  background-color: transparent;
+  border: 3px solid white;
+  font-size: 16px;
+  padding-left: 10px;
+}
+
+.search:focus {
+  outline: none;
+  color: var(--color-primary);
+}
+
+.search::placeholder {
+  color: var(--color-primary);
+}
+
+.white-space {
+  height: 80px;
+}
+
+.card__front,
+.card__back {
+  transition: all 2s;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 600px;
+  background-color: white;
+  border-radius: 10px;
+  box-sizing: 0 20px 40px rgba(0, 0, 0, 0.701);
+}
+
+.cart {
+  position: relative;
+  perspective: 2000px;
+}
+
+.card__back {
+  overflow-y: scroll;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(-180deg);
+  background-image: linear-gradient(
+    to right bottom,
+    rgb(254, 213, 100),
+    rgb(249, 184, 65)
+  );
+}
+.img {
+  border-radius: 10px 10px 0 0;
+  height: 40%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.content {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.content h1 {
+  font-size: 20px;
+  color: #777;
+}
+
+.btn {
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 20px;
+  width: 180px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  margin: 70px auto 0;
+}
+
+.resept__name {
+  text-align: center;
+  margin-top: 20px;
+  color: white;
+  font-size: 28px;
+}
+
+.resept__title {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.resept {
+  margin-top: 20px;
+  padding: 0 30px;
+  line-height: 1.7;
+  color: white;
+}
+
+/* .cart:hover .card__front {
+  transform: rotateY(180deg);
+}
+.cart:hover .card__back {
+  transform: rotateY(0deg);
+} */
+
+.closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+}
